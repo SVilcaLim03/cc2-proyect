@@ -1,7 +1,7 @@
 #include "NaturalNumber.hpp"
-NaturalNumber::NaturalNumber(const long long int number, const bool sign) : sign_(sign), number_(number)
+NaturalNumber::NaturalNumber(const long long int number) : number_(number)
 {
-    if (sign and number < 0)
+    if (number < 0)
     {
         number_ = 0;
     }
@@ -19,10 +19,7 @@ NaturalNumber NaturalNumber::operator++(int) //ok
 }
 NaturalNumber NaturalNumber::operator--() //ok
 {
-    if (number_ == 0 and sign_)
-    {
-    }
-    else
+    if (number_ != 0)
     {
         --number_;
     }
@@ -31,7 +28,7 @@ NaturalNumber NaturalNumber::operator--() //ok
 }
 NaturalNumber NaturalNumber::operator--(int) //ok
 {
-    if (number_ == 0 and sign_)
+    if (number_ == 0 )
     {
         return *this;
     }

@@ -2,19 +2,16 @@
 class NaturalNumber
 {
 private:
-    long long int number_;
-    bool sign_;
+    unsigned long long int number_;
 
 public:
-    NaturalNumber(const long long int number, const bool sign = 0);
-    NaturalNumber operator ++();
-    NaturalNumber operator ++(int);
-    NaturalNumber operator --();
-    NaturalNumber operator --(int);
-    NaturalNumber operator *(const NaturalNumber other);
-    NaturalNumber operator -(const NaturalNumber other);
-    NaturalNumber operator +(const NaturalNumber other);
-    NaturalNumber operator /(const NaturalNumber other);
-    
-
+    NaturalNumber(const long long int number);
+    NaturalNumber operator++();
+    NaturalNumber operator++(int);
+    NaturalNumber operator--();
+    NaturalNumber operator--(int);
+    NaturalNumber operator*(const NaturalNumber other);
+    NaturalNumber operator-(const NaturalNumber other);
+    NaturalNumber operator+(const NaturalNumber other);
+    NaturalNumber operator/(const NaturalNumber other);
 };
