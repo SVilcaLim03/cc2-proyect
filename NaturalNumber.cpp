@@ -1,4 +1,6 @@
 #include "NaturalNumber.hpp"
+#include <stdexcept>
+#include <iostream>
 NaturalNumber::NaturalNumber(const long long int number) : number_(number)
 {
     if (number < 0)
@@ -39,19 +41,21 @@ NaturalNumber NaturalNumber::operator--(int) //ok
         return NaturalNumber(tmp);
     }
 }
-NaturalNumber NaturalNumber::operator*(const NaturalNumber other)
+NaturalNumber NaturalNumber::operator*(const NaturalNumber other) //ok
 {
     return NaturalNumber(number_ * other.number_);
 }
-NaturalNumber NaturalNumber::operator-(const NaturalNumber other)//add error on negative results
+NaturalNumber NaturalNumber::operator-(const NaturalNumber other) //added error on negative results
 {
+    if (number_ < other.number_)
+        throw std::domain_error("the result is not a natural number");
     return NaturalNumber(number_ - other.number_);
 }
-NaturalNumber NaturalNumber::operator+(const NaturalNumber other)
+NaturalNumber NaturalNumber::operator+(const NaturalNumber other) //ok
 {
     return NaturalNumber(number_ + other.number_);
 }
-NaturalNumber NaturalNumber::operator/(const NaturalNumber other)//maybe avoid trucated division?
+NaturalNumber NaturalNumber::operator/(const NaturalNumber other) //maybe avoid trucated division?
 {
     return NaturalNumber(number_ / other.number_);
 }
