@@ -1,3 +1,4 @@
+//Natural Numbers representation for moar typesafety
 #pragma once
 class NaturalNumber
 {

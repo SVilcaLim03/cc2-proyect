@@ -28,7 +28,7 @@ NaturalNumber NaturalNumber::operator--() //ok
 }
 NaturalNumber NaturalNumber::operator--(int) //ok
 {
-    if (number_ == 0 )
+    if (number_ == 0)
     {
         return *this;
     }
@@ -41,17 +41,17 @@ NaturalNumber NaturalNumber::operator--(int) //ok
 }
 NaturalNumber NaturalNumber::operator*(const NaturalNumber other)
 {
-    return number_ * other.number_;
+    return NaturalNumber(number_ * other.number_);
 }
-NaturalNumber NaturalNumber::operator-(const NaturalNumber other)
+NaturalNumber NaturalNumber::operator-(const NaturalNumber other)//add error on negative results
 {
-    return number_ - other.number_;
+    return NaturalNumber(number_ - other.number_);
 }
 NaturalNumber NaturalNumber::operator+(const NaturalNumber other)
 {
-    return number_ + other.number_;
+    return NaturalNumber(number_ + other.number_);
 }
-NaturalNumber NaturalNumber::operator/(const NaturalNumber other)
+NaturalNumber NaturalNumber::operator/(const NaturalNumber other)//maybe avoid trucated division?
 {
-    return number_ / other.number_;
+    return NaturalNumber(number_ / other.number_);
 }
