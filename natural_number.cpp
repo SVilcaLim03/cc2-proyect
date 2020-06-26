@@ -1,4 +1,5 @@
-#include "NaturalNumber.hpp"
+#include "natural_number.hpp"
+#include <iostream>
 NaturalNumber::NaturalNumber(const long long number) : number_(number)
 {
     if (number < 0)
@@ -43,6 +44,11 @@ NaturalNumber &NaturalNumber::operator+=(const NaturalNumber &other)
 {
     number_ += other.number_;
     return *this;
+}
+std::ostream &operator<<(std::ostream &ostream, const NaturalNumber &obj)
+{
+    ostream << obj.number_;
+    return ostream;
 }
 
 NaturalNumber operator+(NaturalNumber a, const NaturalNumber &b)

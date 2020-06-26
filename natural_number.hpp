@@ -1,5 +1,6 @@
 //Natural Numbers representation for moar typesafety
 #pragma once
+#include <iostream>
 class NaturalNumber
 {
 private:
@@ -20,6 +21,7 @@ public:
     friend float operator+(const NaturalNumber a, const float b);
     friend float operator+(const float a, const NaturalNumber b);
     friend NaturalNumber operator+(NaturalNumber a,const NaturalNumber &b);
+    friend std::ostream& operator<<(std::ostream& os, const NaturalNumber& number);
     
 };
 
