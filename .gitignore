@@ -1,9 +1,9 @@
 #general patterns
 *
-!.gitignore
 !*.cpp
 !*.hpp
 !*.h
 !*.c
 #explicit ignore
+!.gitignore
 test.cpp

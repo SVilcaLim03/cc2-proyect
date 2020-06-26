@@ -39,11 +39,23 @@ NaturalNumber NaturalNumber::operator--(int) //ok
         return NaturalNumber(tmp);
     }
 }
+NaturalNumber &NaturalNumber::operator+=(const NaturalNumber &other)
+{
+    number_ += other.number_;
+    return *this;
+}
+
+NaturalNumber operator+(NaturalNumber a, const NaturalNumber &b)
+{
+    a += b;
+    return a;
+}
+
 int operator+(const NaturalNumber a, const int b)
 {
     return (a.number_ + b);
 }
-int operator+(const int a,const NaturalNumber b)
+int operator+(const int a, const NaturalNumber b)
 {
     return (b.number_ + a);
 }
@@ -51,7 +63,7 @@ float operator+(const NaturalNumber a, const float b)
 {
     return (a.number_ + b);
 }
-float operator+(const float a,const NaturalNumber b)
+float operator+(const float a, const NaturalNumber b)
 {
     return (b.number_ + a);
 }
