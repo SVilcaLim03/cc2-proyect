@@ -1,7 +1,5 @@
 #include "NaturalNumber.hpp"
-#include <stdexcept>
-#include <iostream>
-NaturalNumber::NaturalNumber(const long long int number) : number_(number)
+NaturalNumber::NaturalNumber(const long long number) : number_(number)
 {
     if (number < 0)
     {
@@ -15,7 +13,7 @@ NaturalNumber NaturalNumber::operator++() //ok
 }
 NaturalNumber NaturalNumber::operator++(int) //ok
 {
-    long long int tmp = number_;
+    long long tmp = number_;
     ++tmp;
     return NaturalNumber(tmp);
 }
@@ -36,26 +34,26 @@ NaturalNumber NaturalNumber::operator--(int) //ok
     }
     else
     {
-        long long int tmp = number_;
+        long long tmp = number_;
         --tmp;
         return NaturalNumber(tmp);
     }
 }
-NaturalNumber NaturalNumber::operator*(const NaturalNumber other) //ok
+int operator+(const NaturalNumber a, const int b)
 {
-    return NaturalNumber(number_ * other.number_);
+    return (a.number_ + b);
 }
-NaturalNumber NaturalNumber::operator-(const NaturalNumber other) //added error on negative results
+int operator+(const int a,const NaturalNumber b)
 {
-    if (number_ < other.number_)
-        throw std::domain_error("the result is not a natural number");
-    return NaturalNumber(number_ - other.number_);
+    return (b.number_ + a);
 }
-NaturalNumber NaturalNumber::operator+(const NaturalNumber other) //ok
+float operator+(const NaturalNumber a, const float b)
 {
-    return NaturalNumber(number_ + other.number_);
+    return (a.number_ + b);
 }
-NaturalNumber NaturalNumber::operator/(const NaturalNumber other) //maybe avoid trucated division?
+float operator+(const float a,const NaturalNumber b)
 {
-    return NaturalNumber(number_ / other.number_);
+    return (b.number_ + a);
 }
+
+//todo cast operators, mod operator
