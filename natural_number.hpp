@@ -16,6 +16,10 @@ class NaturalNumber {
 
   friend int operator+(const NaturalNumber a, const int b);
   friend int operator+(const int a, const NaturalNumber b);
+  friend long int operator+(const NaturalNumber a, const long int b);
+  friend long int operator+(const long int a, const NaturalNumber b);
+  friend double operator+(const NaturalNumber a, const double b);
+  friend double operator+(const double a, const NaturalNumber b);
   friend float operator+(const NaturalNumber a, const float b);
   friend float operator+(const float a, const NaturalNumber b);
   friend NaturalNumber operator+(NaturalNumber a, const NaturalNumber& b);

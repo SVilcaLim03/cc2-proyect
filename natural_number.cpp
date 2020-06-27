@@ -57,6 +57,22 @@ int operator+(const NaturalNumber a, const int b) { return (a.number_ + b); }
 
 int operator+(const int a, const NaturalNumber b) { return (b.number_ + a); }
 
+long int operator+(const NaturalNumber a, const long int b) {
+  return (a.number_ + b);
+}
+
+long int operator+(const long int a, const NaturalNumber b) {
+  return (b.number_ + a);
+}
+
+double operator+(const NaturalNumber a, const double b) {
+  return (a.number_ + b);
+}
+
+double operator+(const double a, const NaturalNumber b) {
+  return (b.number_ + a);
+}
+
 float operator+(const NaturalNumber a, const float b) {
   return (a.number_ + b);
 }
