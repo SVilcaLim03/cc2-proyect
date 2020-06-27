@@ -3,7 +3,7 @@
 We will use most of the Google's guidelines as reference, because it has been
 used on various proyects with high quality standards.
 ## Git CheatSheet
-### Sync with branch
+### Sync with branch (warning:wipes all local changes, use pull in case of doubt)
     git fetch --all
     git reset --hard origin/master
 ### Switching Branch
