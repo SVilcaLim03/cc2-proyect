@@ -12,7 +12,7 @@ class Date {
   NaturalNumber GetHour();
   NaturalNumber GetMinute();
   NaturalNumber GetSecond();
-  Date(NaturalNumber hour, NaturalNumber minute, NaturalNumber second, int a);
+  Date(NaturalNumber hour, NaturalNumber minute, NaturalNumber second);
   Date();
   ~Date();
 };
