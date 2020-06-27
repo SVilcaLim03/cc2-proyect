@@ -4,4 +4,4 @@
 
 Date ::Date() {}
 ~Date ::Date() {}
-Date ::Date(NaturalNumber hour, NaturalNumber minute, NaturalNumber second);
+Date ::Date(NaturalNumber hour, NaturalNumber minute, NaturalNumber second, int a);
