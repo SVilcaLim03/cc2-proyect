@@ -4,6 +4,7 @@
 !*.hpp
 !*.h
 !*.c
+!*.md
 #explicit ignore
 !.gitignore
 test.cpp
