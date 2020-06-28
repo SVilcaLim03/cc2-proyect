@@ -1,3 +1,4 @@
+
 #pragma once
 #include <iostream>
 
@@ -5,7 +6,7 @@
 
 class Date {
  private:
-  NaturalNumber number_;
+  NaturalNumber hour_;
   NaturalNumber minute_;
   NaturalNumber second_;
   NaturalNumber raw_date_;
@@ -17,4 +18,5 @@ class Date {
   NaturalNumber GetSecond();
   Date(NaturalNumber hour, NaturalNumber minute, NaturalNumber second);
   Date();
+  ~Date();
 };
