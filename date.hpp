@@ -1,11 +1,14 @@
 #pragma once
 #include <iostream>
 
-#include "natural_number.cpp"
+#include "natural_number.hpp"
 
 class Date {
  private:
-  NaturalNumber number_, minute_, second_, raw_date_; int a;
+  NaturalNumber number_;
+  NaturalNumber minute_;
+  NaturalNumber second_;
+  NaturalNumber raw_date_;
 
  public:
   NaturalNumber GetRawDate();
@@ -14,5 +17,4 @@ class Date {
   NaturalNumber GetSecond();
   Date(NaturalNumber hour, NaturalNumber minute, NaturalNumber second);
   Date();
-  ~Date();
 };
