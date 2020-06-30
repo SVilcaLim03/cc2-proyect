@@ -2,8 +2,11 @@
 #include "natural_number.hpp"
 class Entity {
  protected:
-  using ID = NaturalNumber;
-  ID id_;
+  using Identifier = NaturalNumber;
+  Identifier id_;
   friend class Space;
-  Entity();
+
+ public:
+  virtual void Render() = 0;
+  virtual ~Entity() = 0;
 };
