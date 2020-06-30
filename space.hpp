@@ -13,8 +13,9 @@ class Space {
   std::pair<NaturalNumber, NaturalNumber> size_;
 
  public:
-  // Location GetLocation(Entity &entity) const;
-  // bool CheckValidMove(Entity &entity, Location location) const;
+  bool CheckDecition(Entity &entity, Location location) const;
+  std::map<Entity &, Location> GetNearEntities(Entity &entity);
+
   Space();
   ~Space();
 };

@@ -3,10 +3,11 @@
 #include "mobile.hpp"
 class Zombie : public Entity, public Mobile {
  private:
- public:
-  void Render();
   void Attack();
   void Move();
+
+ public:
+  void Render();
   Zombie();
   ~Zombie();
 };
