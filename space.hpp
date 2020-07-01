@@ -1,20 +1,22 @@
 #pragma once
-#include <iostream>
 #include <map>
 
 #include "entity.hpp"
 #include "natural_number.hpp"
 
 class Space {
- private:
-  // using Identifier = NaturalNumber;
+ public:
   using Location = std::pair<int, int>;
-  std::map<Entity &, Location> entities_;
-  std::pair<NaturalNumber, NaturalNumber> size_;
+  using EntitiesMap = std::map<Entity &, Location>;
+  using SpaceSize = std::pair<NaturalNumber, NaturalNumber>;
+
+ private:
+  EntitiesMap entities_;
+  SpaceSize size_;
+  friend class Handler;
 
  public:
-  bool CheckDecition(Entity &entity, Location location) const;
-  std::map<Entity &, Location> GetNearEntities(Entity &entity);
+  EntitiesMap &GetNearEntities(const Entity &entity);
 
   Space();
   ~Space();
