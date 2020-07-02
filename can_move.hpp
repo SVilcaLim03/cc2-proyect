@@ -1,9 +1,7 @@
+#pragma once
 #include "entity.hpp"
-#include "natural_number.hpp"
-
 class CanMove {
  protected:
   using Location = std::pair<int, int>;
-  virtual void Move(Location location) = 0;
-  virtual void Attack(Entity& entity) = 0;
+  virtual bool Move(Location location) = 0;
 };

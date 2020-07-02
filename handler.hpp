@@ -1,12 +1,17 @@
+#pragma once
+#include "space.hpp"
+#include "time.hpp"
+
 class Handler {
  private:
-  void CreateEntities();
-  void RefreshScreen();
-  void GenerateEntitiesDecitions();
+  Space space_;
+  Time time();
+
+  bool CreateEntities();
+  bool GenerateDecitions();
 
  public:
-
   Handler();
   ~Handler();
-  int Run();
+  bool Run();
 };

@@ -1,5 +1,6 @@
 #general patterns
 *
+!*/
 !*.cpp
 !*.hpp
 !*.h
@@ -7,4 +8,5 @@
 !*.md
 #explicit ignore
 !.gitignore
+.vscode/
 test.cpp

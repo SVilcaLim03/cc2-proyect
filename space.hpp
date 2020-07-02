@@ -9,12 +9,11 @@ class Space {
   using Location = std::pair<int, int>;
   using EntitiesMap = std::map<Entity &, Location>;
   using SpaceSize = std::pair<NaturalNumber, NaturalNumber>;
+  friend class Handler;
 
  private:
   EntitiesMap entities_;
   SpaceSize size_;
-  friend class Handler;
-  // friend Entity::GetNearEntities();
   EntitiesMap &GetNearEntities(const Entity &entity);
   Space();
   ~Space();
