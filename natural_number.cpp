@@ -2,14 +2,16 @@
 
 #include <iostream>
 
+//constructors
 NaturalNumber::NaturalNumber(const long long int number) : number_(number) {
   if (number < 0) {
     number_ = 0;
   }
 }
-
+//casting operators
 NaturalNumber::operator int() const { return (int)number_; }
 
+//Unary operators
 NaturalNumber NaturalNumber::operator++() {
   ++number_;
   return *this;
@@ -37,9 +39,29 @@ NaturalNumber NaturalNumber::operator--(int) {
     return NaturalNumber(tmp);
   }
 }
-
+//Asignement Operators
 NaturalNumber& NaturalNumber::operator+=(const NaturalNumber& other) {
   number_ += other.number_;
+  return *this;
+}
+
+NaturalNumber& NaturalNumber::operator*=(const NaturalNumber& other) {
+  number_ *= other.number_;
+  return *this;
+}
+
+NaturalNumber& NaturalNumber::operator/=(const NaturalNumber& other) {
+  number_ /= other.number_;
+  return *this;
+}
+
+NaturalNumber& NaturalNumber::operator-=(const NaturalNumber& other) {
+  number_ -= other.number_;
+  return *this;
+}
+
+NaturalNumber& NaturalNumber::operator%=(const NaturalNumber& other) {
+  number_ %= other.number_;
   return *this;
 }
 
@@ -47,9 +69,24 @@ std::ostream& operator<<(std::ostream& ostream, const NaturalNumber& obj) {
   ostream << obj.number_;
   return ostream;
 }
-
+//Binary Operators
 NaturalNumber operator+(NaturalNumber a, const NaturalNumber& b) {
   a += b;
+  return a;
+}
+
+NaturalNumber operator*(NaturalNumber a, const NaturalNumber& b) {
+  a *= b;
+  return a;
+}
+
+NaturalNumber operator-(NaturalNumber a, const NaturalNumber& b) {
+  a -= b;
+  return a;
+}
+
+NaturalNumber operator%(NaturalNumber a, const NaturalNumber& b) {
+  a %= b;
   return a;
 }
 

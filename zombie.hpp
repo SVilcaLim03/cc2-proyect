@@ -1,8 +1,8 @@
 #pragma once
 #include "can_be_rendered.hpp"
 #include "can_decide.hpp"
-#include "entity.hpp"
 #include "can_move.hpp"
+#include "entity.hpp"
 class Zombie : public Entity,
                public CanMove,
                public CanBeRendered,

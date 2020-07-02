@@ -14,10 +14,8 @@ class Space {
   EntitiesMap entities_;
   SpaceSize size_;
   friend class Handler;
-
- public:
+  // friend Entity::GetNearEntities();
   EntitiesMap &GetNearEntities(const Entity &entity);
-
   Space();
   ~Space();
 };

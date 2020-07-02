@@ -17,6 +17,7 @@ class Date {
   NaturalNumber GetMinute();
   NaturalNumber GetSecond();
   Date(NaturalNumber hour, NaturalNumber minute, NaturalNumber second);
+  Date(Time& time);
   Date();
   ~Date();
 };

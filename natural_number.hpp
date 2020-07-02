@@ -12,6 +12,12 @@ class NaturalNumber {
   NaturalNumber operator--();
   NaturalNumber operator--(int);
   NaturalNumber& operator+=(const NaturalNumber& other);
+  NaturalNumber& operator*=(const NaturalNumber& other);
+  NaturalNumber& operator/=(const NaturalNumber& other);
+  NaturalNumber& operator-=(const NaturalNumber& other);
+  NaturalNumber& operator%=(const NaturalNumber& other);
+
+
   operator int() const;
 
   friend int operator+(const NaturalNumber a, const int b);
@@ -23,6 +29,9 @@ class NaturalNumber {
   friend float operator+(const NaturalNumber a, const float b);
   friend float operator+(const float a, const NaturalNumber b);
   friend NaturalNumber operator+(NaturalNumber a, const NaturalNumber& b);
+  friend NaturalNumber operator*(NaturalNumber a, const NaturalNumber& b);
+  friend NaturalNumber operator%(NaturalNumber a, const NaturalNumber& b);
+
   friend std::ostream& operator<<(std::ostream& ostream,
                                   const NaturalNumber& number);
 };
