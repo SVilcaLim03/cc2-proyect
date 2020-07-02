@@ -1,3 +1,5 @@
-# La vaina en alguna vaina (El proyecto)
-## Diagrama de clases
-## Diagrama entidad - relacion
+# CC2 proyect simulator (The Proyect)
+## Class Diagram
+## Database Diagram
+![database](./diagrams/database.png) 
+
