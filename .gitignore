@@ -8,5 +8,7 @@
 !*.md
 #explicit ignore
 !.gitignore
+!resources/**/.png
+!diagrams/*.png
 .vscode/
 test.cpp
