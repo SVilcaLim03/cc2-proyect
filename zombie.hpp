@@ -2,9 +2,9 @@
 #include "can_be_rendered.hpp"
 #include "can_decide.hpp"
 #include "entity.hpp"
-#include "mobile.hpp"
+#include "can_move.hpp"
 class Zombie : public Entity,
-               public Mobile,
+               public CanMove,
                public CanBeRendered,
                public CanDecide {
  private:

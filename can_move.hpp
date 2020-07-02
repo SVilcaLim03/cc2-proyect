@@ -1,7 +1,7 @@
 #include "entity.hpp"
 #include "natural_number.hpp"
 
-class Mobile {
+class CanMove {
  protected:
   using Location = std::pair<int, int>;
   virtual void Move(Location location) = 0;
