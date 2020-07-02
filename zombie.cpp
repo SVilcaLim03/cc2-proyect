@@ -6,6 +6,6 @@ Zombie::~Zombie() {}
 
 void Zombie::Render() {}
 
-void Zombie::Attack() {}
-
-void Zombie::Move() {}
+// void Zombie::Attack() {}
+// 
+// void Zombie::Move() {}

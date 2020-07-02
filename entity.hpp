@@ -7,8 +7,6 @@ class Entity {
   Identifier id_;
   friend class Space;
   void GenerateIdentifier();
-
- public:
-  virtual void Render() = 0;
-  virtual ~Entity() = 0;
+  Entity();
+  virtual ~Entity()=0;
 };
