@@ -9,7 +9,7 @@ class Zombie : public Entity,
                public CanDecide {
  private:
   void Attack(Entity& entity);
-  void Move(Location location);
+  bool Move(Location location);
   bool Decide();
   void Render();
 

@@ -4,6 +4,7 @@
 class Entity {
  protected:
   using Identifier = NaturalNumber;
+  
   Identifier id_;
   friend class Space;
   void GenerateIdentifier();

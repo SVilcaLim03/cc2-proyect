@@ -8,6 +8,7 @@
 !*.md
 #explicit ignore
 !.gitignore
+!documentation
 !resources/**/.png
 !diagrams/*.png
 .vscode/
