@@ -1,17 +1,14 @@
 #pragma once
-#include "can_be_rendered.hpp"
-#include "can_decide.hpp"
-#include "can_move.hpp"
+#include "can_attack.hpp"
+#include "can_convert.hpp"
 #include "entity.hpp"
-class Zombie : public Entity,
-               public CanMove,
-               public CanBeRendered,
-               public CanDecide {
+class Zombie : public Entity, public CanAttack, public CanConvert {
  private:
-  void Attack(Entity& entity);
+  bool Attack(Entity& entity);
   bool Move(Location location);
   bool Decide();
-  void Render();
+  bool Render();
+  bool Convert(Entity& entity);
 
  public:
   Zombie();

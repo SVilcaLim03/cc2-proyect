@@ -3,18 +3,20 @@
 
 #include "entity.hpp"
 #include "natural_number.hpp"
+#include "object.hpp"
 
 class Space {
- public:
+ private:
   using Location = std::pair<int, int>;
-  using EntitiesMap = std::map<Entity &, Location>;
+  using ObjectMap = std::map<Object &, Location>;
   using SpaceSize = std::pair<NaturalNumber, NaturalNumber>;
-  friend class Handler;
+  friend class SystemHandler;
 
  private:
-  EntitiesMap entities_;
+  ObjectMap *map_;
   SpaceSize size_;
-  EntitiesMap &GetNearEntities(const Entity &entity);
+
+  // ObjectMap &GetNearEntities(const Entity &entity);
   Space();
   ~Space();
 };
