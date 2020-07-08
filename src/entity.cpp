@@ -1,5 +1,4 @@
-#include "entity.hpp"
-
+#include "../include/entity.hpp"
 Entity::~Entity() {}
 Entity::Entity() {}
 void Entity::GenerateIdentifier() {}

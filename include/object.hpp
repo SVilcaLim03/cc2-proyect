@@ -1,5 +1,4 @@
 #pragma once
-#include "natural_number.hpp"
 
 class Object {
  protected:

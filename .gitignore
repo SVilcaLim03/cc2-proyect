@@ -1,15 +1,15 @@
 #general patterns
 *
-!*/
 !*.cpp
 !*.hpp
-!*.h
-!*.c
 !*.md
+
 #explicit ignore
-!.gitignore
-!documentation
-!resources/**/.png
-!diagrams/*.png
 .vscode/
-test.cpp
+!CMakeLists.txt
+!.gitignore
+!doc/
+!resources/**/*
+!include/
+!src/
+!test/

@@ -1,4 +1,4 @@
-#include "natural_number.hpp"
+#include "../include/natural_number.hpp"
 
 #include <iostream>
 

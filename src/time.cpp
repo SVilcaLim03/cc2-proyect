@@ -1,8 +1,8 @@
-#include "time.hpp"
+#include "../include/time.hpp"
 
 #include <ctime>
 
-#include "natural_number.hpp"
+#include "../include/natural_number.hpp"
 Time::Time(NaturalNumber rel_start_time) {
   abs_start_time_ = NaturalNumber((int)time(nullptr));
   rel_start_time_ = rel_start_time;

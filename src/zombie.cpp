@@ -1,10 +1,10 @@
-#include "zombie.hpp"
+#include "../include/zombie.hpp"
 
 Zombie::Zombie() {}
 
 Zombie::~Zombie() {}
 
-void Zombie::Render() {}
+bool Zombie::Render() {}
 
 // void Zombie::Attack() {}
 // 
