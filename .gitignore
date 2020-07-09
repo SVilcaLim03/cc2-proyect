@@ -8,7 +8,9 @@
 .vscode/
 !CMakeLists.txt
 !.gitignore
+!doc/
 !doc/**/*
+!resources/
 !resources/**/*
 !include/
 !src/
