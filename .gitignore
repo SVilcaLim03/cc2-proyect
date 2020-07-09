@@ -10,8 +10,8 @@
 !.gitignore
 !doc/
 !doc/**/*
-!resources/
-!resources/**/*
+!res/
+!res/**/*
 !include/
 !src/
 !test/
