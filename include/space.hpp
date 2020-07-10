@@ -1,15 +1,13 @@
 #pragma once
 #include <map>
+#include "simulation_object.hpp"
 
-#include "entity.hpp"
-#include "natural_number.hpp"
-#include "object.hpp"
 
 class Space {
  private:
   using Location = std::pair<int, int>;
-  using ObjectMap = std::map<Object &, Location>;
-  using SpaceSize = std::pair<NaturalNumber, NaturalNumber>;
+  using ObjectMap = std::map<SimulationObject &, Location>;
+  using SpaceSize = std::pair<int, int>;
   friend class SystemHandler;
 
  private:

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-#include "utilities.hpp"
+#include "../include/utils.hpp"
 
 int main() {
   if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {

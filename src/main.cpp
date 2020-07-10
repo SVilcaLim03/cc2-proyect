@@ -1,10 +1,15 @@
+#include <exception>
+
 #include "../include/system_handler.hpp"
 
 int main() {
   SystemHandler main_handler;
-  if (main_handler.Run()) {
+
+  try {
+    main_handler.Run();
     return 0;
-  } else {
-    return -1;
+  } catch (const std::exception& e) {
+    std::cerr << e.what() << '\n';
+    return 1;
   }
 }
