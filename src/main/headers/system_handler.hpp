@@ -21,7 +21,7 @@ class SystemHandler {
   // bool CallAudioPlayer();
 
  public:
-  bool Run();
+  void Run();
   SystemHandler();
   ~SystemHandler();
 };

@@ -1,3 +1,3 @@
-#include "../include/entity.hpp"
+#include "../headers/entity.hpp"
 Entity::~Entity() {}
 Entity::Entity() {}

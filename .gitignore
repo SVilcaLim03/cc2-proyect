@@ -3,15 +3,19 @@
 !*.cpp
 !*.hpp
 !*.md
+!*.gradle
 
 #explicit ignore
-.vscode/
-!CMakeLists.txt
+
+!gradlew
+!gradlew.bat
 !.gitignore
+!.gitattributes
 !doc/
 !doc/**/*
 !res/
 !res/**/*
-!include/
 !src/
+!src/**/*
 !test/
+!test/**/*

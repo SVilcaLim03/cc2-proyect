@@ -1,4 +1,4 @@
-#include "../include/zombie.hpp"
+#include "../headers/zombie.hpp"
 
 Zombie::Zombie() {}
 
