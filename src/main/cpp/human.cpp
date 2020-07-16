@@ -1,5 +1,5 @@
-#include "../headers/human.hpp"
+#include "human.hpp"
 
-Human::Human(){
-  
-}
+Human::Human() {}
+Human::~Human() {}
+bool Human::Decide() {}

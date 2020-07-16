@@ -1,7 +1,7 @@
 #include <exception>
 
-#include "../headers/graphic_handler.hpp"
-#include "../headers/system_handler.hpp"
+#include "graphic_handler.hpp"
+#include "system_handler.hpp"
 
 int main() {
   SystemHandler main_handler;

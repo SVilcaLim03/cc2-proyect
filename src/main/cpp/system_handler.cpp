@@ -1,9 +1,9 @@
-#include "../headers/system_handler.hpp"
+#include "system_handler.hpp"
 
 #include <string>
 
-#include "../include/button.hpp"
-#include "../include/graphic_handler.hpp"
+#include "button.hpp"
+#include "graphic_handler.hpp"
 SystemHandler::SystemHandler() {}
 SystemHandler::~SystemHandler() {}
 

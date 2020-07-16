@@ -1,4 +1,5 @@
 #pragma once
+#include <utility>
 class Entity {
  protected:
   using Location = std::pair<int, int>;

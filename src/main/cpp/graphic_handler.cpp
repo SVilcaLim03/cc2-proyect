@@ -1,4 +1,4 @@
-#include "../headers/graphic_handler.hpp"
+#include "graphic_handler.hpp"
 
 #include <SDL2/SDL.h>
 GraphicHandler::GraphicHandler() {

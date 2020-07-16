@@ -3,8 +3,6 @@
 class Human : public Entity {
  private:
   bool Decide();
-
- public:
   Human();
   ~Human();
 };

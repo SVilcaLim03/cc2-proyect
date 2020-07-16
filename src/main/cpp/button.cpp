@@ -1,11 +1,11 @@
-#include "../headers/button.hpp"
+#include "button.hpp"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
 #include <string>
 
-#include "../headers/utils.hpp"
+#include "utils.hpp"
 Button::Button(const std::string image_path) {
   image_path_ = GetResourcePath(image_path);
   auto surfaces = new SDL_Surface *[3];

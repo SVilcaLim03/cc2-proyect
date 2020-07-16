@@ -1,6 +1,6 @@
-#include "../headers/time.hpp"
+#include "time.hpp"
 
-#include <ctime>
+// #include <ctime>
 
 // Time::Time(NaturalNumber rel_start_time) {
 //   abs_start_time_ = NaturalNumber((int)time(nullptr));
