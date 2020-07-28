@@ -9,5 +9,5 @@ class Entity {
 
   virtual void Move(Location location) = 0;
   virtual bool Decide() = 0;
-  void GenerateIdentifier();
+  // void GenerateIdentifier();
 };

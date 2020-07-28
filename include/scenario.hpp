@@ -1,10 +1,9 @@
-
-//
-class ScenarioObject
+#pragma once
+class Scenario
 {
 private:
   /* data */
 public:
-  ScenarioObject(/* args */);
-  ~ScenarioObject();
+  Scenario(/* args */);
+  ~Scenario();
 };
