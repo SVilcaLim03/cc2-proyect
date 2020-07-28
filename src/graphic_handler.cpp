@@ -1,6 +1,6 @@
 #include "graphic_handler.hpp"
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 GraphicHandler::GraphicHandler() {
   window_ =
       SDL_CreateWindow("La vaina de CC", SDL_WINDOWPOS_UNDEFINED,
@@ -9,4 +9,4 @@ GraphicHandler::GraphicHandler() {
       window_, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 }
 GraphicHandler::~GraphicHandler() {}
-SDL_Renderer* GraphicHandler::GetRenderer() { return renderer_; }
+SDL_Renderer *GraphicHandler::GetRenderer() { return renderer_; }

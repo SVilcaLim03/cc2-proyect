@@ -3,12 +3,9 @@
 !*.cpp
 !*.hpp
 !*.md
-!*.gradle
 
 #explicit ignore
 
-!gradlew
-!gradlew.bat
 !.gitignore
 !.gitattributes
 !doc/
@@ -19,3 +16,5 @@
 !src/**/*
 !test/
 !test/**/*
+!include/
+!include/**/*

@@ -1,4 +1,4 @@
-#include "../headers/space.hpp"
+#include "space.hpp"
 
 Space::Space(){}
 Space::~Space(){}
