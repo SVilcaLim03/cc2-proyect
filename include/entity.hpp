@@ -1,10 +1,10 @@
 #pragma once
 #include <utility>
 class Entity {
- protected:
+protected:
   using Location = std::pair<int, int>;
 
- protected:
+protected:
   int id_;
 
   virtual void Move(Location location) = 0;
