@@ -38,10 +38,11 @@ int main() {
       throw std::runtime_error(SDL_GetError());
     }
     // create main menu
-    GameImage test=GameImage(renderer,"test.jpg",1280,720);
-        SDL_RenderClear(renderer);
-        SDL_RenderCopy(renderer, test.GetTexture(), NULL, NULL);
-        SDL_RenderPresent(renderer);
+
+    GameImage test = GameImage(renderer, "test.jpg", 1280, 720);
+    SDL_RenderClear(renderer);
+    test.Render();
+    SDL_RenderPresent(renderer);
 
     while (true) {
     }

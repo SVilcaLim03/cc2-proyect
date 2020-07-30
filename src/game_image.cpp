@@ -20,9 +20,6 @@ GameImage::GameImage(SDL_Renderer *&renderer, const std::string image_path,
 
 GameImage::~GameImage() { SDL_DestroyTexture(image_); }
 
-SDL_Texture *& GameImage::GetTexture(){
-  return image_;
-}
 void GameImage::Render() {
   SDL_RenderCopy(renderer_, image_, nullptr, nullptr);
 }
