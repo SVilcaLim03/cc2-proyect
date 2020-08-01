@@ -42,7 +42,7 @@ int main() {
     GameImage test = GameImage(renderer, "test.jpg", 1280, 720);
     SDL_RenderClear(renderer);
     test.Render();
-    SDL_RenderPresent(renderer);
+    // SDL_RenderPresent(renderer);
 
     while (true) {
     }
