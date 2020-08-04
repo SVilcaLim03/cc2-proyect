@@ -1,18 +1,19 @@
 #pragma once
-#include "buttonstate.h"
-#include "command.h"
-#include "buttonclicked.h"
-
-class Button
-{
+#include "button_state.hpp"
+#include "command.hpp"
+#include <memory>
+class Button {
 private:
-	ButtonState* state_;
-	Command* command_;
-	char name;
-
+  std::unique_ptr<ButtonState> state_;
+  Command *command_;
+  enum State { NEUTRAL, HOVERED, CLICKED };
+  State state_name_;
+  friend class ButtonClicked;
+  friend class ButtonNeutral;
+  friend class ButtonHovered;
 public:
-	Button(char name, Command* command);
-	void ChangeButtonState(ButtonState* newstate);
-
+  Button(Command *command);
+  void OnClick();
+  void OnHover();
+  void HoverOut();
 };
-

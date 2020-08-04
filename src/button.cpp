@@ -1,13 +1,8 @@
-#include "button.h"
+#include "button.hpp"
+#include "button_neutral.hpp"
 
-Button::Button(char label, Command* command)
-{
-	ButtonState* state[2];
-	state[0] = new ButtonClicked(nullptr);
-
+Button::Button(Command *command) : command_(command) {
+  state_ = std::make_unique<ButtonState>(ButtonNeutral(*this));
 }
-
-void Button::ChangeButtonState(ButtonState* newstate)
-{
-
-}
+void Button::OnClick() { state_->OnClick(); }
+void Button::OnHover() { state_->OnHover(); }

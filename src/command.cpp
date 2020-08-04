@@ -1,6 +1,5 @@
-#include "command.h"
+#include "command.hpp"
 
-void Command::Execute()
-{
-
-}
+Command::Command() {}
+Command::~Command() {}
+void Command::Execute() {}

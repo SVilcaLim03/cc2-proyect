@@ -1,8 +1,7 @@
 #pragma once
-class Command
-{
+class Command {
 public:
-	Command();
-	virtual ~Command();
-	virtual void Execute()=0;
+  Command();
+  virtual ~Command();
+  virtual void Execute() = 0;
 };
