@@ -10,7 +10,7 @@ Animation::Animation(GameObject &game_object, std::string sprite_path,
   current_frame_idx = 0;
 }
 
-std::pair<SDL_Texture *, SDL_Rect> Animation::GetCurrentFrame() {
+std::pair<SDL_Texture *, SDL_Rect *> Animation::GetCurrentFrame() {
   int state = game_object_->GetState();
   int state_rect_x = sprite_map_[state].first.x;
   int state_rect_y = sprite_map_[state].first.y;
@@ -29,5 +29,5 @@ std::pair<SDL_Texture *, SDL_Rect> Animation::GetCurrentFrame() {
   current_frame_rect_.w = state_rect_width;
   current_frame_rect_.h = state_rect_height;
 
-  return std::make_pair(sprite_, current_frame_rect_);
+  return std::make_pair(sprite_, &current_frame_rect_);
 }
