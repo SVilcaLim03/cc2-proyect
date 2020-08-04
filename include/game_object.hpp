@@ -1,7 +1,8 @@
 #pragma once
-class GameObject{
+
+class GameObject {
 public:
-  enum State:int;
   GameObject();
-  virtual ~GameObject()=0;
+  virtual int GetState() = 0;
+  virtual ~GameObject();
 };

@@ -1,8 +1,9 @@
 #pragma once
 #include "button_state.hpp"
 #include "command.hpp"
+#include "game_object.hpp"
 #include <memory>
-class Button {
+class Button :public GameObject{
 private:
   std::unique_ptr<ButtonState> state_;
   Command *command_;
@@ -13,7 +14,9 @@ private:
   friend class ButtonHovered;
 public:
   Button(Command *command);
+  ~Button();
   void OnClick();
   void OnHover();
   void HoverOut();
+  int GetState();
 };

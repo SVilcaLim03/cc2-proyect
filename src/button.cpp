@@ -4,5 +4,9 @@
 Button::Button(Command *command) : command_(command) {
   state_ = std::make_unique<ButtonState>(ButtonNeutral(*this));
 }
+
+Button::~Button() {}
+
 void Button::OnClick() { state_->OnClick(); }
+
 void Button::OnHover() { state_->OnHover(); }
