@@ -1,13 +1,10 @@
 #include "animation.hpp"
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_render.h>
-#include <SDL2/SDL_surface.h>
-#include <utility>
+#include "utils.hpp"
 Animation::Animation(GameObject &game_object, std::string sprite_path,
                      std::map<int, std::pair<SDL_Rect, int>> sprite_map,
                      SDL_Renderer *renderer)
     : game_object_(&game_object), sprite_map_(sprite_map) {
-  SDL_Surface *tmp = IMG_Load("uhetsoau");
+  SDL_Surface *tmp = IMG_Load((GetResourcePath() + sprite_path).c_str());
   sprite_ = SDL_CreateTextureFromSurface(renderer, tmp);
   SDL_FreeSurface(tmp);
   current_frame_idx = 0;
