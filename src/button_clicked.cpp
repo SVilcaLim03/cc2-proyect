@@ -3,6 +3,7 @@
 #include <memory>
 ButtonClicked::ButtonClicked(Button &button) : button_(&button) {
   button_->state_name_ = Button::CLICKED;
+  button_->command_->Execute();
 }
 
 ButtonClicked::~ButtonClicked() {}

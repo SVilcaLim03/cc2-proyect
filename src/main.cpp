@@ -1,6 +1,7 @@
 #include "animation.hpp"
 #include "button.hpp"
 #include "graphic_handler.hpp"
+#include "command_start_simulation.hpp"
 #include "utils.hpp"
 #include <SDL2/SDL.h>
 #include <exception>
@@ -15,8 +16,9 @@ int main() {
     SDL_Event event;
     bool running = true;
     GraphicHandler graphic_handler{};
+    CommandStartSimulation start_simulation{};
 
-    Button btn_start(nullptr);
+    Button btn_start(&start_simulation);
     Animation btn_start_animation(
         btn_start, "test.png",
         std::map<int, std::pair<SDL_Rect, int>>{
@@ -34,6 +36,8 @@ int main() {
         switch (event.type) {
         case SDL_QUIT:
           running = false;
+        case SDL_MOUSEBUTTONDOWN:
+          btn_start.OnClick();
         }
       }
       if (MouseHoverChecker(SDL_Rect{200, 200, 172, 64})) {
