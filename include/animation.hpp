@@ -20,7 +20,7 @@ private:
 
 public:
   Animation(GameObject &game_object, std::string sprite_path,
-            std::map<int, std::pair<SDL_Rect, int>> sprite_map,
+            std::map<int, std::pair<SDL_Rect, int>> &&sprite_map,
             SDL_Renderer *renderer);
   ~Animation();
   std::pair<SDL_Texture *, SDL_Rect *> GetCurrentFrame();

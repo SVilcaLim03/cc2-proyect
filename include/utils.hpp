@@ -17,4 +17,4 @@
 
 std::string GetResourcePath(const std::string &sub_dir = "");
 
-bool MouseHoverChecker(SDL_Rect & region);
+bool MouseHoverChecker(SDL_Rect region);

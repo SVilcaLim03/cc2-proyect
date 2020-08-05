@@ -2,7 +2,7 @@
 #include "button.hpp"
 #include "graphic_handler.hpp"
 #include "utils.hpp"
-#include <SDL2/SDL_events.h>
+#include <SDL2/SDL.h>
 #include <exception>
 #include <iostream>
 #include <map>
@@ -17,12 +17,13 @@ int main() {
     GraphicHandler graphic_handler{};
 
     Button btn_start(nullptr);
-    std::map<int, std::pair<SDL_Rect, int>> btn_start_sprite_map = {
-        {Button::NEUTRAL, std::make_pair(SDL_Rect{0, 0, 176, 64}, 1)},
-        {Button::HOVERED, std::make_pair(SDL_Rect{0, 64, 176, 64}, 1)},
-        {Button::CLICKED, std::make_pair(SDL_Rect{0, 128, 176, 64}, 1)}};
-    Animation btn_start_animation(btn_start, "test.png", btn_start_sprite_map,
-                                  graphic_handler.GetRenderer());
+    Animation btn_start_animation(
+        btn_start, "test.png",
+        std::map<int, std::pair<SDL_Rect, int>>{
+            {Button::NEUTRAL, std::make_pair(SDL_Rect{0, 0, 176, 64}, 1)},
+            {Button::HOVERED, std::make_pair(SDL_Rect{0, 64, 176, 64}, 1)},
+            {Button::CLICKED, std::make_pair(SDL_Rect{0, 128, 176, 64}, 1)}},
+        graphic_handler.GetRenderer());
 
     while (running) {
       graphic_handler.ClearRenderer();
@@ -33,13 +34,13 @@ int main() {
         switch (event.type) {
         case SDL_QUIT:
           running = false;
-        case SDL_MOUSEMOTION:
-          if(event.motion.x){
-
-          }
-
         }
-
+      }
+      if (MouseHoverChecker(SDL_Rect{200, 200, 172, 64})) {
+        btn_start.OnHover();
+      }
+      else{
+        btn_start.HoverOut();
       }
     }
   } catch (std::exception &e) {

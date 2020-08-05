@@ -11,4 +11,6 @@ void Button::OnClick() { state_->OnClick(); }
 
 void Button::OnHover() { state_->OnHover(); }
 
-int Button::GetState(){return state_name_;}
+void Button::HoverOut() { state_->HoverOut(); }
+
+int Button::GetState() { return state_name_; }
