@@ -18,6 +18,7 @@ add_library(Game
   src/button_state.cpp
   src/animation.cpp
   src/graphic_handler.cpp
+  src/utils.cpp
 )
 
 target_link_libraries( main Game SDL2 SDL2_image)

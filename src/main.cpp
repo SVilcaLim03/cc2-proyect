@@ -1,6 +1,8 @@
 #include "animation.hpp"
 #include "button.hpp"
 #include "graphic_handler.hpp"
+#include "utils.hpp"
+#include <SDL2/SDL_events.h>
 #include <exception>
 #include <iostream>
 #include <map>
@@ -31,7 +33,13 @@ int main() {
         switch (event.type) {
         case SDL_QUIT:
           running = false;
+        case SDL_MOUSEMOTION:
+          if(event.motion.x){
+
+          }
+
         }
+
       }
     }
   } catch (std::exception &e) {
