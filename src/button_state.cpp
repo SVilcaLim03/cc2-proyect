@@ -1,9 +1,5 @@
-#include "buttonstate.h"
+#include "button_state.hpp"
 
-ButtonState::ButtonState()
-{
-}
+ButtonState::ButtonState() {}
 
-ButtonState::~ButtonState()
-{
-}
+ButtonState::~ButtonState() {}

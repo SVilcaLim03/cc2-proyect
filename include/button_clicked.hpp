@@ -1,6 +1,5 @@
 #pragma once
 #include "button_state.hpp"
-#include "command.hpp"
 #include "button.hpp"
 
 class ButtonClicked : public ButtonState {

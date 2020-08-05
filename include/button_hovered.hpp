@@ -1,7 +1,7 @@
 #pragma once
 #include "button.hpp"
 #include "button_state.hpp"
-class ButtonHovered {
+class ButtonHovered :public ButtonState{
 private:
   Button *button_;
 

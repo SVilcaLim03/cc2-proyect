@@ -1,3 +1,9 @@
+#ifdef _WIN32
+#include <SDL_image.h>
+#else
+#include <SDL2/SDL_image.h>
+#endif
+
 #include "animation.hpp"
 #include "utils.hpp"
 Animation::Animation(GameObject &game_object, std::string sprite_path,
@@ -9,6 +15,7 @@ Animation::Animation(GameObject &game_object, std::string sprite_path,
   SDL_FreeSurface(tmp);
   current_frame_idx = 0;
 }
+Animation::~Animation(){}
 
 std::pair<SDL_Texture *, SDL_Rect *> Animation::GetCurrentFrame() {
   int state = game_object_->GetState();

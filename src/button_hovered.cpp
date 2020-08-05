@@ -11,9 +11,9 @@ ButtonHovered::~ButtonHovered() {}
 void ButtonHovered::OnHover() {}
 
 void ButtonHovered::OnClick() {
-  button_->state_ = std::make_unique<ButtonState>(ButtonClicked(*button_));
+  button_->state_ = std::make_unique<ButtonClicked>(*button_);
 }
 
 void ButtonHovered::HoverOut() {
-  button_->state_ = std::make_unique<ButtonState>(ButtonNeutral(*button_));
+      button_->state_ = std::make_unique<ButtonNeutral>(*button_);
 }

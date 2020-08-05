@@ -2,4 +2,3 @@
 
 Command::Command() {}
 Command::~Command() {}
-void Command::Execute() {}
