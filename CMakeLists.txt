@@ -10,15 +10,6 @@ set (CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-
-if(WIN32)
-  include_directories(${PROJECT_SOURCE_DIR}/lib/SDL2/include)
-  include_directories(${PROJECT_SOURCE_DIR}/lib/SDL2_image/include)
-endif()
-
-add_executable(main
-    src/main.cpp
-)
 add_library(Game
   src/game_object.cpp
   src/button.cpp
@@ -33,14 +24,21 @@ add_library(Game
   src/utils.cpp
 )
 
-
 if(WIN32)
+  include_directories(${PROJECT_SOURCE_DIR}/lib/SDL2/include)
+  include_directories(${PROJECT_SOURCE_DIR}/lib/SDL2_image/include)
+  add_executable(main.exe
+    src/main.cpp
+    )
   target_link_libraries(
     main
     Game
     ${PROJECT_SOURCE_DIR}/lib/SDL2/lib/x64/SDL.lib
-    ${PROJECT_SOURCE_DIR}/lib/SDL2/lib/x64/SDL_image.lib
+    ${PROJECT_SOURCE_DIR}/lib/SDL2_image/lib/x64/SDL_image.lib
     )
 elseif(UNIX AND NOT APPLE)
+  add_executable(main
+    src/main.cpp
+    )
   target_link_libraries( main Game SDL2 SDL2_image)
 endif()
