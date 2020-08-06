@@ -1,4 +1,5 @@
 #include "utils.hpp"
+
 std::string GetResourcePath(const std::string &sub_dir) {
 #ifdef _WIN32
   const char kPathSeparator = '\\';
@@ -29,7 +30,7 @@ bool MouseHoverChecker(SDL_Rect region) {
   int mouse_x;
   int mouse_y;
   SDL_GetMouseState(&mouse_x, &mouse_y);
-  bool on_x = region.x <= mouse_x and mouse_x <= region.x + region.w;
-  bool on_y = region.y <= mouse_y and mouse_y <= region.y + region.h;
-  return (on_x and on_y);
+  bool on_x = region.x <= mouse_x && mouse_x <= region.x + region.w;
+  bool on_y = region.y <= mouse_y && mouse_y <= region.y + region.h;
+  return (on_x && on_y);
 }

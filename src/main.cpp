@@ -3,14 +3,14 @@
 #include "graphic_handler.hpp"
 #include "command_start_simulation.hpp"
 #include "utils.hpp"
-#include <SDL2/SDL.h>
 #include <exception>
 #include <iostream>
 #include <map>
 #include <ostream>
 #include <string>
 #include <utility>
-int main() {
+
+int main(int argc, char* args[]) {
 
   try {
     SDL_Event event;
@@ -20,7 +20,7 @@ int main() {
 
     Button btn_start(&start_simulation);
     Animation btn_start_animation(
-        btn_start, "test.png",
+        btn_start, "test.bmp",
         std::map<int, std::pair<SDL_Rect, int>>{
             {Button::NEUTRAL, std::make_pair(SDL_Rect{0, 0, 176, 64}, 1)},
             {Button::HOVERED, std::make_pair(SDL_Rect{0, 64, 176, 64}, 1)},
@@ -50,4 +50,5 @@ int main() {
   } catch (std::exception &e) {
     std::cout << e.what() << std::endl;
   }
+  return 0;
 }
