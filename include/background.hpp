@@ -1,5 +1,4 @@
-#include "game_object.hpp"
-class Background : public GameObject {
+class Background {
 public:
   enum State { NEUTRAL };
 

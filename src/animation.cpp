@@ -6,19 +6,19 @@
 
 #include "animation.hpp"
 #include "utils.hpp"
-Animation::Animation(GameObject &game_object, std::string sprite_path,
-                     std::map<int, std::pair<SDL_Rect, int>> &&sprite_map,
-                     SDL_Renderer *renderer)
-    : game_object_(&game_object), sprite_map_(sprite_map) {
+Animation::Animation(Object *&object, std::string &sprite_path,
+                     std::map<int, std::pair<SDL_Rect, int>> &sprite_map,
+                     SDL_Renderer *&renderer)
+    : object_(object), sprite_map_(sprite_map) {
   SDL_Surface *tmp = IMG_Load((GetResourcePath() + sprite_path).c_str());
   sprite_ = SDL_CreateTextureFromSurface(renderer, tmp);
   SDL_FreeSurface(tmp);
   current_frame_idx = 0;
 }
-Animation::~Animation(){}
+Animation::~Animation() {}
 
 std::pair<SDL_Texture *, SDL_Rect *> Animation::GetCurrentFrame() {
-  int state = game_object_->GetState();
+  int state = object_->GetState();
   int state_rect_x = sprite_map_[state].first.x;
   int state_rect_y = sprite_map_[state].first.y;
   int state_rect_width = sprite_map_[state].first.w;

@@ -22,6 +22,7 @@ add_library(Game
   src/animation.cpp
   src/graphic_handler.cpp
   src/utils.cpp
+  src/location.cpp
 )
 
 if(WIN32)
@@ -31,9 +32,9 @@ if(WIN32)
     src/main.cpp
     )
   target_link_libraries(
-    main.exe
+    main
     Game
-	${PROJECT_SOURCE_DIR}/lib/SDL2/lib/x64/SDL2main.lib
+    ${PROJECT_SOURCE_DIR}/lib/SDL2/lib/x64/SDL2main.lib
     ${PROJECT_SOURCE_DIR}/lib/SDL2/lib/x64/SDL2.lib
     ${PROJECT_SOURCE_DIR}/lib/SDL2_image/lib/x64/SDL2_image.lib
     )

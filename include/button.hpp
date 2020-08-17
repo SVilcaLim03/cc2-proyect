@@ -1,9 +1,9 @@
 #pragma once
 #include "button_state.hpp"
 #include "command.hpp"
-#include "game_object.hpp"
+#include "object.hpp"
 #include <memory>
-class Button : public GameObject {
+class Button : public Object {
 public:
   enum State { NEUTRAL, HOVERED, CLICKED };
 
@@ -14,6 +14,7 @@ private:
   friend class ButtonClicked;
   friend class ButtonNeutral;
   friend class ButtonHovered;
+  friend class ButtonHandler;
 
 public:
   Button(Command *command);

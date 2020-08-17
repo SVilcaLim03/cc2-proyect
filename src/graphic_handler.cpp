@@ -33,7 +33,7 @@ GraphicHandler::~GraphicHandler() {
   SDL_DestroyRenderer(renderer_);
 }
 
-SDL_Renderer *GraphicHandler::GetRenderer() const { return renderer_; }
+SDL_Renderer *&GraphicHandler::GetRenderer() { return renderer_; }
 
 void GraphicHandler::Render(Animation &animation,
                             std::pair<int, int> position) {
