@@ -19,8 +19,8 @@ public:
                     std::map<int, std::pair<SDL_Rect, int>> &&sprite_map,
                     SDL_Renderer *&renderer);
 
-  void SetObserver(Observer *&&observer, Observable *&observable);
-  Location &GetLocation() const;
-  Animation &GetAnimation() const;
+  void SetObserver(Observer *&&observer, Observable *observable);
+  Location *&GetLocation();
+  Animation *&GetAnimation();
   Object *GetObject();
 };

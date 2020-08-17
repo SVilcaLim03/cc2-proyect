@@ -9,11 +9,10 @@
 Animation::Animation(Object *&object, std::string &sprite_path,
                      std::map<int, std::pair<SDL_Rect, int>> &sprite_map,
                      SDL_Renderer *&renderer)
-    : object_(object), sprite_map_(sprite_map) {
+    : object_(object), sprite_map_(sprite_map), current_frame_idx_(0) {
   SDL_Surface *tmp = IMG_Load((GetResourcePath() + sprite_path).c_str());
   sprite_ = SDL_CreateTextureFromSurface(renderer, tmp);
   SDL_FreeSurface(tmp);
-  current_frame_idx = 0;
 }
 Animation::~Animation() {}
 
@@ -25,11 +24,11 @@ std::pair<SDL_Texture *, SDL_Rect *> Animation::GetCurrentFrame() {
   int state_rect_height = sprite_map_[state].first.h;
   int number_of_frames = sprite_map_[state].second;
 
-  ++current_frame_idx;
-  if (current_frame_idx >= number_of_frames) {
-    current_frame_idx = 0;
+  ++current_frame_idx_;
+  if (current_frame_idx_ >= number_of_frames) {
+    current_frame_idx_ = 0;
   }
-  state_rect_x += state_rect_x * current_frame_idx;
+  state_rect_x += state_rect_x * current_frame_idx_;
 
   current_frame_rect_.x = state_rect_x;
   current_frame_rect_.y = state_rect_y;
@@ -37,4 +36,12 @@ std::pair<SDL_Texture *, SDL_Rect *> Animation::GetCurrentFrame() {
   current_frame_rect_.h = state_rect_height;
 
   return std::make_pair(sprite_, &current_frame_rect_);
+}
+
+std::pair<int, int> Animation::GetFrameSize() {
+  int state = object_->GetState();
+  frame_size_ =
+      std::make_pair(sprite_map_[state].first.w, sprite_map_[state].first.h);
+
+  return frame_size_;
 }

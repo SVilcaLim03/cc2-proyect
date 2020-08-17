@@ -1,6 +1,7 @@
 #pragma once
 #include "mouse_input.hpp"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_mouse.h>
 class InputHandler {
 private:
   MouseInput *mouse_input_;

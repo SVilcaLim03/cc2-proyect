@@ -26,11 +26,8 @@ std::string GetResourcePath(const std::string &sub_dir) {
   // append it to the base path. This would be something like
   return sub_dir.empty() ? base_res : base_res + sub_dir + kPathSeparator;
 }
-bool MouseHoverChecker(SDL_Rect region) {
-  int mouse_x;
-  int mouse_y;
-  SDL_GetMouseState(&mouse_x, &mouse_y);
-  bool on_x = region.x <= mouse_x && mouse_x <= region.x + region.w;
-  bool on_y = region.y <= mouse_y && mouse_y <= region.y + region.h;
+bool MouseHoverChecker(SDL_Rect region, std::pair<int, int> mouse_pos) {
+  bool on_x = region.x <= mouse_pos.first && mouse_pos.first <= region.x + region.w;
+  bool on_y = region.y <= mouse_pos.second && mouse_pos.second <= region.y + region.h;
   return (on_x && on_y);
 }

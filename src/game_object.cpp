@@ -13,13 +13,13 @@ void GameObject::SetAnimation(
     SDL_Renderer *&renderer) {
   animation_ = new Animation(object_, sprite_path, sprite_map, renderer);
 }
-Location &GameObject::GetLocation() const { return *location_; }
+Location *&GameObject::GetLocation() { return location_; }
 
-Animation &GameObject::GetAnimation() const { return *animation_; }
+Animation *&GameObject::GetAnimation() { return animation_; }
 
 Object *GameObject::GetObject() { return object_; }
 
-void GameObject::SetObserver(Observer *&&observer, Observable *&observable) {
+void GameObject::SetObserver(Observer *&&observer, Observable *observable) {
   observer_ = observer;
   observer_->SetObservable(observable);
   observable->AddObserver(observer_);

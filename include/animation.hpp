@@ -16,8 +16,9 @@ private:
   SDL_Texture *sprite_;
   std::map<int, std::pair<SDL_Rect, int>> sprite_map_;
   SDL_Rect current_frame_rect_;
+  std::pair<int, int> frame_size_;
   Object *object_;
-  int current_frame_idx;
+  int current_frame_idx_;
   Animation(Object *&object, std::string &sprite_path,
             std::map<int, std::pair<SDL_Rect, int>> &sprite_map,
             SDL_Renderer *&renderer);
@@ -25,5 +26,5 @@ private:
 public:
   ~Animation();
   std::pair<SDL_Texture *, SDL_Rect *> GetCurrentFrame();
-
+  std::pair<int, int> GetFrameSize();
 };

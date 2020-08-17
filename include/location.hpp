@@ -13,5 +13,7 @@ private:
 public:
   ~Location() = default;
   std::pair<int, int> GetPosititon();
+  int GetX();
+  int GetY();
   void ChangePosition(std::pair<int, int> &&vector);
 };

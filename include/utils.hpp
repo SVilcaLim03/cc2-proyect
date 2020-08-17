@@ -8,6 +8,7 @@
 #include <exception>
 #include <iostream>
 #include <string>
+#include <utility>
 
 // function to get absolute path, assuming that the executable is under
 // ...../bin/ and resources are on ...../res
@@ -17,4 +18,4 @@
 
 std::string GetResourcePath(const std::string &sub_dir = "");
 
-bool MouseHoverChecker(SDL_Rect region);
+bool MouseHoverChecker(SDL_Rect region, std::pair<int,int> mouse_pos);
