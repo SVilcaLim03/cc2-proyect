@@ -1,4 +1,5 @@
-class Background {
+#include "object.hpp"
+class Background : public Object {
 public:
   enum State { NEUTRAL };
 

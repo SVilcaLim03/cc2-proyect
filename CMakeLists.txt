@@ -26,6 +26,7 @@ add_library(Game
   src/location.cpp
   src/mouse_input.cpp
   src/input_handler.cpp
+  src/background.cpp
 
 )
 

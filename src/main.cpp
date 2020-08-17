@@ -1,4 +1,5 @@
 #include "animation.hpp"
+#include "background.hpp"
 #include "button.hpp"
 #include "button_observer.hpp"
 #include "command_start_simulation.hpp"
@@ -36,14 +37,24 @@ int main(int argc, char *args[]) {
     btn_start.SetObserver(
         new ButtonObserver(btn_start.GetLocation(), btn_start.GetAnimation()),
         dynamic_cast<Observable *>(mouse_input));
+    GameObject menu_title{new Background(), 0, 0};
+    menu_title.SetAnimation(
+        "title.png",
+        std::map<int, std::pair<SDL_Rect, int>>{
+            {Background::NEUTRAL, std::make_pair(SDL_Rect{0, 0, 254, 690}, 6)}},
+        renderer);
 
     while (running) {
       input_handler.Listen();
 
       graphic_handler.ClearRenderer();
-      graphic_handler.Render(*btn_start.GetAnimation(),
-                             btn_start.GetLocation()->GetPosititon());
+      // graphic_handler.Render(*btn_start.GetAnimation(),
+      //                        btn_start.GetLocation()->GetPosititon());
+      graphic_handler.Render(*menu_title.GetAnimation(),
+                             menu_title.GetLocation()->GetPosititon());
+
       graphic_handler.UpdateScreen();
+      SDL_Delay(16);
     }
     return 0;
 
