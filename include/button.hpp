@@ -1,6 +1,7 @@
 #pragma once
 #include "button_state.hpp"
 #include "command.hpp"
+#include "mouse_input.hpp"
 #include "object.hpp"
 #include <memory>
 class Button : public Object {
@@ -11,10 +12,11 @@ private:
   std::unique_ptr<ButtonState> state_;
   Command *command_;
   State state_name_;
+
   friend class ButtonClicked;
   friend class ButtonNeutral;
   friend class ButtonHovered;
-  friend class ButtonHandler;
+  friend class ButtonObserver;
 
 public:
   Button(Command *command);

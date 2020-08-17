@@ -1,6 +1,7 @@
 #include "game_object.hpp"
-GameObject::GameObject(Object *&&object)
-    : object_(object), animation_(nullptr), location_(nullptr) {}
+GameObject::GameObject(Object *&&object, int &&x, int &&y)
+    : object_(object), animation_(nullptr), location_(new Location(x, y)),
+      observer_(nullptr) {}
 GameObject::~GameObject() {
   delete animation_;
   delete location_;
@@ -12,11 +13,13 @@ void GameObject::SetAnimation(
     SDL_Renderer *&renderer) {
   animation_ = new Animation(object_, sprite_path, sprite_map, renderer);
 }
-void GameObject::SetLocation(int &&x, int &&y) {
-  location_ = new Location(x, y);
-}
 Location &GameObject::GetLocation() const { return *location_; }
 
 Animation &GameObject::GetAnimation() const { return *animation_; }
 
 Object *GameObject::GetObject() { return object_; }
+
+void GameObject::SetObserver(Observer *&&observer,Observable *&observable) {
+  observer_=observer;
+  observer_->SetObservable(observable);
+}

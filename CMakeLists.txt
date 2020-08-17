@@ -23,6 +23,7 @@ add_library(Game
   src/graphic_handler.cpp
   src/utils.cpp
   src/location.cpp
+  src/mouse_input.cpp
 )
 
 if(WIN32)

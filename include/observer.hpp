@@ -1,8 +1,9 @@
 #pragma once
-class Observer{
+class Observable;
+class Observer {
 public:
-  Observer();
-  virtual ~Observer();
-  virtual void Update()=0;
-  virtual void AddObservable()=0;
+  Observer() = default;
+  virtual ~Observer() = default;
+  virtual void Update() = 0;
+  virtual void SetObservable(Observable *&observable)=0;
 };

@@ -1,3 +1,4 @@
+#pragma once
 #include "observable.hpp"
 #include <forward_list>
 #include <utility>
