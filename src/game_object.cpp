@@ -19,7 +19,8 @@ Animation &GameObject::GetAnimation() const { return *animation_; }
 
 Object *GameObject::GetObject() { return object_; }
 
-void GameObject::SetObserver(Observer *&&observer,Observable *&observable) {
-  observer_=observer;
+void GameObject::SetObserver(Observer *&&observer, Observable *&observable) {
+  observer_ = observer;
   observer_->SetObservable(observable);
+  observable->AddObserver(observer_);
 }

@@ -1,7 +1,7 @@
 #pragma once
 #include "animation.hpp"
-#include "button_observer.hpp"
 #include "location.hpp"
+#include "observable.hpp"
 class GameObject {
 public:
   Object *object_;
@@ -19,7 +19,7 @@ public:
                     std::map<int, std::pair<SDL_Rect, int>> &&sprite_map,
                     SDL_Renderer *&renderer);
 
-  void SetObserver(Observer *&&observer,Observable *&observable);
+  void SetObserver(Observer *&&observer, Observable *&observable);
   Location &GetLocation() const;
   Animation &GetAnimation() const;
   Object *GetObject();

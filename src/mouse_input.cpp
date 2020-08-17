@@ -1,9 +1,6 @@
 #include "mouse_input.hpp"
-MouseInput::MouseInput() {}
 
-MouseInput::~MouseInput() {}
-
-void MouseInput::RegisterObserver(Observer *observer) {
+void MouseInput::AddObserver(Observer *observer) {
   observers_.push_front(observer);
 }
 void MouseInput::RemoveObserver(Observer *observer) {}

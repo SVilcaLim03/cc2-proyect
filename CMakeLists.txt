@@ -17,6 +17,7 @@ add_library(Game
   src/button_hovered.cpp
   src/button_neutral.cpp
   src/button_state.cpp
+  src/button_observer.cpp
   src/command.cpp
   src/command_start_simulation.cpp
   src/animation.cpp
@@ -24,6 +25,8 @@ add_library(Game
   src/utils.cpp
   src/location.cpp
   src/mouse_input.cpp
+  src/input_handler.cpp
+
 )
 
 if(WIN32)

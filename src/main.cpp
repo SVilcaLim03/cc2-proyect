@@ -3,6 +3,7 @@
 #include "command_start_simulation.hpp"
 #include "game_object.hpp"
 #include "graphic_handler.hpp"
+#include "input_handler.hpp"
 #include "utils.hpp"
 #include <exception>
 #include <iostream>
@@ -18,6 +19,8 @@ int main(int argc, char *args[]) {
     bool running = true;
     GraphicHandler graphic_handler{};
     auto renderer = graphic_handler.GetRenderer();
+    InputHandler input_handler{&running};
+
     CommandStartSimulation start_simulation{};
 
     GameObject btn_start{new Button(&start_simulation), 200, 200};
@@ -34,24 +37,7 @@ int main(int argc, char *args[]) {
       graphic_handler.Render(btn_start.GetAnimation(),
                              btn_start.GetLocation().GetPosititon());
       graphic_handler.UpdateScreen();
-
-      while (SDL_PollEvent(&event)) {
-        switch (event.type) {
-        case SDL_QUIT:
-          running = false;
-        case SDL_MOUSEBUTTONDOWN:
-          dynamic_cast<Button *>(btn_start.object_)->OnClick();
-          std::cout << "holi\n";
-          break;
-        }
-      }
-      if (MouseHoverChecker(SDL_Rect{200, 200, 172, 64})) {
-        dynamic_cast<Button *>(btn_start.object_)->OnHover();
-        // static_cast<Button *> (btn_start.GetObject())->OnHover();
-
-      } else {
-        dynamic_cast<Button *>(btn_start.object_)->HoverOut();
-      }
+      input_handler.Listen();
     }
     return 0;
 
