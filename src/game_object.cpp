@@ -8,14 +8,13 @@ GameObject::~GameObject() {
   delete object_;
 }
 void GameObject::SetAnimation(
-    std::string &&sprite_path,
-    std::map<int, std::pair<SDL_Rect, int>> &&sprite_map,
-    SDL_Renderer *&renderer) {
+    std::string sprite_path, std::map<int, std::pair<SDL_Rect, int>> sprite_map,
+    SDL_Renderer *renderer) {
   animation_ = new Animation(object_, sprite_path, sprite_map, renderer);
 }
 Location *&GameObject::GetLocation() { return location_; }
 
-Animation *&GameObject::GetAnimation() { return animation_; }
+Animation *GameObject::GetAnimation() { return animation_; }
 
 Object *GameObject::GetObject() { return object_; }
 

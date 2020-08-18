@@ -41,8 +41,15 @@ int main(int argc, char *args[]) {
     menu_title.SetAnimation(
         "title.png",
         std::map<int, std::pair<SDL_Rect, int>>{
-            {Background::NEUTRAL, std::make_pair(SDL_Rect{0, 0, 254, 690}, 6)}},
+            {Background::NEUTRAL, std::make_pair(SDL_Rect{0, 0, 690, 254}, 6)}},
         renderer);
+    GameObject menu_background{new Background(), 0, 0};
+    menu_background.SetAnimation(
+        "background.png",
+        std::map<int, std::pair<SDL_Rect, int>>{
+            {0, std::make_pair(SDL_Rect{0, 0, 1280, 720}, 12)}},
+        renderer);
+
 
     while (running) {
       input_handler.Listen();
@@ -50,11 +57,13 @@ int main(int argc, char *args[]) {
       graphic_handler.ClearRenderer();
       // graphic_handler.Render(*btn_start.GetAnimation(),
       //                        btn_start.GetLocation()->GetPosititon());
-      graphic_handler.Render(*menu_title.GetAnimation(),
-                             menu_title.GetLocation()->GetPosititon());
+      // graphic_handler.Render(*menu_title.GetAnimation(),
+      //                        menu_title.GetLocation()->GetPosititon());
 
+      graphic_handler.Render(menu_background.GetAnimation(),
+                             menu_background.GetLocation()->GetPosititon());
       graphic_handler.UpdateScreen();
-      SDL_Delay(16);
+      SDL_Delay(32);
     }
     return 0;
 

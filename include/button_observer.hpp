@@ -12,7 +12,7 @@ private:
   Animation *animation_;
 
 public:
-  ButtonObserver(Location *&location, Animation *&animation);
+  ButtonObserver(Location *&location, Animation *animation);
   ~ButtonObserver() = default;
   void SetObservable(Observable *&observable);
   void Update();

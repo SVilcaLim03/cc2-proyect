@@ -15,12 +15,12 @@ public:
   GameObject(Object *&&object, int &&x = 0, int &&y = 0);
   GameObject() = delete;
   ~GameObject();
-  void SetAnimation(std::string &&sprite_path,
-                    std::map<int, std::pair<SDL_Rect, int>> &&sprite_map,
-                    SDL_Renderer *&renderer);
+  void SetAnimation(std::string sprite_path,
+                    std::map<int, std::pair<SDL_Rect, int>> sprite_map,
+                    SDL_Renderer *renderer);
 
   void SetObserver(Observer *&&observer, Observable *observable);
   Location *&GetLocation();
-  Animation *&GetAnimation();
+  Animation *GetAnimation();
   Object *GetObject();
 };

@@ -1,5 +1,5 @@
 #include "button_observer.hpp"
-ButtonObserver::ButtonObserver(Location *&location, Animation *&animation)
+ButtonObserver::ButtonObserver(Location *&location, Animation *animation)
     : button_(nullptr), location_(location), observable_(nullptr),
       animation_(animation) {}
 void ButtonObserver::SetObservable(Observable *&observable) {

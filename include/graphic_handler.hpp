@@ -15,8 +15,8 @@ private:
 public:
   GraphicHandler();
   ~GraphicHandler();
-  void Render(Animation &animation, std::pair<int, int> position);
+  void Render(Animation *animation, std::pair<int, int> position);
   void UpdateScreen();
   void ClearRenderer();
-  SDL_Renderer *& GetRenderer();
+  SDL_Renderer *&GetRenderer();
 };

@@ -1,5 +1,5 @@
 #include "background.hpp"
-Background::Background() : state_(NEUTRAL) {}
+Background::Background() : state_(Background::NEUTRAL) {}
 
 Background::~Background() {}
 

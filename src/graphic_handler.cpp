@@ -19,7 +19,7 @@ GraphicHandler::GraphicHandler() {
 
   // create render
   renderer_ = SDL_CreateRenderer(
-      main_window_, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+      main_window_, -1, SDL_RENDERER_ACCELERATED);
   if (renderer_ == nullptr) {
     SDL_DestroyWindow(main_window_);
     SDL_Quit();
@@ -35,17 +35,17 @@ GraphicHandler::~GraphicHandler() {
 
 SDL_Renderer *&GraphicHandler::GetRenderer() { return renderer_; }
 
-void GraphicHandler::Render(Animation &animation,
+void GraphicHandler::Render(Animation *animation,
                             std::pair<int, int> position) {
-  SDL_Texture *sprite = animation.GetCurrentFrame().first;
-  SDL_Rect *rect_frame = animation.GetCurrentFrame().second;
+  SDL_Texture *sprite = animation->GetCurrentFrame().first;
+  SDL_Rect rect_frame = animation->GetCurrentFrame().second;
   SDL_Rect rect_dest;
-  rect_dest.h = rect_frame->h;
-  rect_dest.w = rect_frame->w;
+  rect_dest.h = rect_frame.h;
+  rect_dest.w = rect_frame.w;
   rect_dest.x = position.first;
   rect_dest.y = position.second;
 
-  SDL_RenderCopy(renderer_, sprite, rect_frame, &rect_dest);
+  SDL_RenderCopy(renderer_, sprite, &rect_frame, &rect_dest);
 }
 
 void GraphicHandler::UpdateScreen() { SDL_RenderPresent(renderer_); }
